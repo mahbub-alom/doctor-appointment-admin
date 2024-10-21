@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "IDs": {
+      "type": "integer",
+      "required": true
+    },
+    "Doctors": {
+      "type": "enumeration",
+      "enum": [
+        "Dr. Harry",
+        "Dr. John",
+        "Dr. Ihana",
+        "Dr. jonathon"
+      ]
+    },
+    "doctors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::doctor.doctor",
+      "inversedBy": "categories"
+    }
+  }
+}
